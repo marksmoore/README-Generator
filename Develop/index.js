@@ -13,60 +13,111 @@ const questions = [
 {
     type: "input",
     name: "Name",
-    message: "What is your name?"
+    message: "What is your name?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to enter your Name!');
+          return false;
+        }
+      }
 },
 {
     type: "input",
     name: "GithubUsername",
-    message: "What is your Github user name?"
-
+    message: "What is your Github user name?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to enter your Github Username!');
+          return false;
+        }
+      }
 },
 {
     type: "input",
     name: "ProjectTitle",
-    message: "What is the name of the Project Title?"
+    message: "What is the name of the Project Title?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to enter the Project Title!');
+          return false;
+        }
+      }
 },
 {
     type: "input",
     name: "ProjectDescription",
-    message: "Please write a description for your project, what it does, and what you are hoping to accomplish with it."
-},
-{
+    message: "Please write a description for your project, what it does, and what you are hoping to accomplish with it.",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to provide a description!');
+          return false;
+        }
+      }
+    {
     type: "input",
     name: "Installation",
-    message: "How do you install the project?"
+    message: "How do you install the project?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to mention installation!');
+          return false;
+        }
+      }
 },
 {
     type: "input",
     name: "Usage",
-    message: "Please describe how you may use the project."
+    message: "Please describe how you may use the project.",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to tell how to use the product!');
+          return false;
+        }
+      }
 },
 {
-    type: "list",
+    type: "checkbox",
     name: "License",
     message: "Provide a list of all Licenses you would like to use.",
-    choices: [{
-        name: "MIT License",
-    },
-    {
-        name: "GNU General Public License v3",
-    },
-    {
-        name: "ISC License",
-    },
-    {
-        name: "Apache License 2.0"
-    }]
+    choices: ["MIT License", "GNU General Public License v3", "ISC License", "Apache License 2.0"]
 },
 {
     type: "input",
     name: "Contributors",
-    message: "How many contributors were involved with your project?"
+    message: "How many contributors were involved with your project?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to tell how many contributors there were! Enter 0 if there were none!');
+          return false;
+        }
+      }
 },
 {
     type: "input",
     name: "Tests",
-    message: "What kind of tests did you run for your project?"
+    message: "What kind of tests did you run for your project?",
+    validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('You need to enter if there were any tests! Enter "none" if that was the case!');
+          return false;
+        }
+      }
 }
 
 ];

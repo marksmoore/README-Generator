@@ -1,13 +1,14 @@
-
-
-const inquirer = require("inquirer");
-//const fs = require("fs");
-//const gerateMarkdown = require("./utils/generateMarkdown");
-//const api = require("./utils/api");
-
 // TODO: Include packages needed for this application
 
+const inquirer = require("inquirer");
+const fs = require("fs");
+const gerateMarkdown = require("./utils/generateMarkdown");
+const api = require("./utils/api");
+
+
+
 // TODO: Create an array of questions for user input
+
 const questions = [
 
 {
@@ -91,7 +92,7 @@ const questions = [
     type: "checkbox",
     name: "License",
     message: "Provide a list of all Licenses you would like to use.",
-    choices: ["MIT License", "GNU General Public License v3", "ISC License", "Apache License 2.0"]
+    choices: ["MIT License", "GNU General Public License v3", "ISC License", "Apache License 2.0", "None"]
 },
 {
     type: "input",
@@ -123,12 +124,24 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, function(err){
+    if (err){
+        console.error(err);
+    }
+  });
+
+}
 
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
     try {
     const answers = promptUser();
+    const user = await api.getUser(answers.GithubUsername);
+    const readMe = gerateMarkdown(answers, user);
+    writeToFile("GenerateREADME.md", readMe);
+    console.log("****README sucessfully created****");
+
 }catch(err) {
     console.log(err);
 }

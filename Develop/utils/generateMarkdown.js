@@ -88,7 +88,7 @@ ${answers.Contributors} Contributor(s)
 ${answers.Tests}
 ---
 ## Questions
-Please see my GitHub at (https://github.com/${answers.github}) or by email at ${answers.email}
+Please see my GitHub at (https://github.com/${answers.GithubUsername}) or by email at ${answers.email}
 
 `
 ;

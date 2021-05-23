@@ -3,6 +3,8 @@
   # Mark S. Moore
   E-mail: msmo1960@gmail.com
   ![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)
+
+ To View the video of the README Generator, you must double-click the READMEGenerator.mp4, and then click "View raw".  The video will download to your PC and allow you to view it.
 ---
 ## Description 
 This project allows a user to create a README file from the command-line by answering a series of questions.
@@ -37,5 +39,5 @@ This project is licensed under the MIT License license.
 There are no tests required for this project.
 ---
 ## Questions
-Please see my GitHub at (https://github.com/undefined) or by email at msmo1960@gmail.com
+Please see my GitHub at (https://github.com/marksmoore) or by email at msmo1960@gmail.com
 

@@ -1,7 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = license => {
-  console.log(license);
   if(license === 'None'){
     return ''
   }
@@ -45,7 +44,7 @@ function renderLicenseSection(license) {
   if(license === 'None'){
     return "None"
   }
-  return `This project is covered under the ${license} license.`
+  return `This project is licensed under the ${license} license.`
 };
 
 // TODO: Create a function to generate markdown for README
@@ -66,6 +65,8 @@ ${answers.ProjectDescription}
 * [License](#License)
 * [Badges](#Badges)
 * [Contributing](#Contributors)
+* [Tests](#Tests)
+* [Questions](#Questions)
 ---
 ## Installation
 ${answers.Installation}
@@ -76,14 +77,19 @@ ${answers.Usage}
 ## License
 ${renderLicenseSection(answers.license)}
 ${renderLicenseLink(answers.license)}
-${answers.license}
 ---
 ## Badges
 ${renderLicenseBadge(answers.license)}
 ---
 ## Contributing
-${answers.Contributors} Contributors
+${answers.Contributors} Contributor(s)
 ---
+## Tests
+${answers.Tests}
+---
+## Questions
+Please see my GitHub at (https://github.com/${answers.github}) or by email at ${answers.email}
+
 `
 ;
 }
